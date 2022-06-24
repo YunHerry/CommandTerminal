@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc20d598-5cf0-4383-ad15-8990cbb58c91" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/indi/yunHerry/command/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunHerry/exception/CommandExecutionException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunHerry/exception/ParameterParsingException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunHerry/execution/Execute.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunHerry/resolve/ArgsResolveImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunHerry/resolve/MethodsResolveImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunHerry/resolve/Resolve.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/indi/yunHerry/log/InfoPrintExecute.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +53,8 @@
       <updated>1655877779928</updated>
       <workItem from="1655877782291" duration="1681000" />
       <workItem from="1655960612629" duration="140000" />
-      <workItem from="1655960761698" duration="1089000" />
+      <workItem from="1655960761698" duration="1226000" />
+      <workItem from="1656084482152" duration="686000" />
     </task>
     <servers />
   </component>
