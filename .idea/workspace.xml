@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc20d598-5cf0-4383-ad15-8990cbb58c91" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/indi/yunHerry/log/InfoPrintExecute.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/indi/yunHerry/Terminal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/indi/yunHerry/constant/StringColor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunHerry/log/InfoPrintExecute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunHerry/log/InfoPrintExecute.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +45,26 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="Terminal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="indi.yunHerry.Terminal" />
+      <module name="CommandTerminal" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="indi.yunHerry.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Terminal" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -55,6 +77,7 @@
       <workItem from="1655960612629" duration="140000" />
       <workItem from="1655960761698" duration="1226000" />
       <workItem from="1656084482152" duration="686000" />
+      <workItem from="1656138381968" duration="2507000" />
     </task>
     <servers />
   </component>
