@@ -7,6 +7,10 @@
     <list default="true" id="dc20d598-5cf0-4383-ad15-8990cbb58c91" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/indi/yunHerry/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunHerry/Terminal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunHerry/log/InfoPrintExecute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunHerry/log/InfoPrintExecute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunHerry/resolve/ArgsResolveImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunHerry/resolve/ArgsResolveImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunHerry/resolve/MethodsResolveImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunHerry/resolve/MethodsResolveImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunHerry/resolve/Resolve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunHerry/resolve/Resolve.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +81,7 @@
       <workItem from="1656084482152" duration="686000" />
       <workItem from="1656138381968" duration="2507000" />
       <workItem from="1656247480692" duration="637000" />
+      <workItem from="1656314684425" duration="3287000" />
     </task>
     <servers />
   </component>

@@ -1,10 +1,15 @@
 package indi.yunHerry;
 
+import com.sun.source.tree.WhileLoopTree;
 import indi.yunHerry.exception.ParameterParsingException;
 import indi.yunHerry.log.InfoPrintExecute;
+import indi.yunHerry.resolve.ArgsResolveImpl;
+import indi.yunHerry.resolve.MethodsResolveImpl;
+import indi.yunHerry.resolve.Resolve;
 
 import java.io.InputStream;
 import java.util.Scanner;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -23,11 +28,8 @@ public class Terminal {
         do {
             System.out.print("> ");
             command = scanner.nextLine();
-            System.out.println(Pattern.matches("^/[a-zA-Z0-9]{1,}+", command));
-            if (!Pattern.matches("^/[a-zA-Z0-9]{1,}+", command)) {
-                throw new ParameterParsingException("无法解析该命令");
-            }
-            InfoPrintExecute.InfoPrint(command);
+            System.out.println("正在执行的方法名称: " + new MethodsResolveImpl().analyze(command));
+            System.out.println("正在执行的方法的参数信息: " + new ArgsResolveImpl().analyze(command));
         } while (!"exit".equalsIgnoreCase(command));
     }
 }

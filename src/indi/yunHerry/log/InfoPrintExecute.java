@@ -20,6 +20,9 @@ public class InfoPrintExecute {
          out.println(sdf.format(new Date()) + StringColor.GREEN + " [INFO] " + StringColor.WHITE + message);
     }
     public static void WarnPrint(String message) {
-        out.println(message);
+        out.println(sdf.format(new Date()) + StringColor.YELLOW + " [WARN] " + StringColor.WHITE + message);
+    }
+    public static void ErrorPrint(Exception exception) {
+        out.println(sdf.format(new Date()) + StringColor.RED + " [ERROR] " + exception.toString() + StringColor.WHITE);
     }
 }
