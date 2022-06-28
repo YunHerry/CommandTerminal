@@ -1,16 +1,12 @@
 package indi.yunHerry;
 
-import com.sun.source.tree.WhileLoopTree;
-import indi.yunHerry.exception.ParameterParsingException;
-import indi.yunHerry.log.InfoPrintExecute;
-import indi.yunHerry.resolve.ArgsResolveImpl;
-import indi.yunHerry.resolve.MethodsResolveImpl;
-import indi.yunHerry.resolve.Resolve;
 
-import java.io.InputStream;
+import indi.yunHerry.model.entity.TerminalApplication;
+import indi.yunHerry.resolve.ArgsResolve;
+import indi.yunHerry.resolve.MethodsResolve;
+import indi.yunHerry.utils.StringCollectionUtil;
+
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * @author YunHerry
@@ -19,17 +15,21 @@ import java.util.regex.Pattern;
 public class Terminal {
     protected static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) throws ParameterParsingException {
-        Terminal.run();
+    public static void main(String[] args) {
+       TerminalApplication terminalApplication= Terminal.run();
     }
 
-    public static void run() throws ParameterParsingException {
-        String command;
-        do {
-            System.out.print("> ");
-            command = scanner.nextLine();
-            System.out.println("正在执行的方法名称: " + new MethodsResolveImpl().analyze(command));
-            System.out.println("正在执行的方法的参数信息: " + new ArgsResolveImpl().analyze(command));
-        } while (!"exit".equalsIgnoreCase(command));
+    public static TerminalApplication run() {
+        Thread commandTerminal = new Thread(() -> {
+            String command;
+            do {
+                System.out.print("> ");
+                command = scanner.nextLine();
+                System.out.println("正在执行的方法名称: " + new MethodsResolve().analyze(command));
+                System.out.println("正在执行的方法的参数信息: " + StringCollectionUtil.ToMap(new ArgsResolve().analyze(command)));
+            } while (!"/exit".equalsIgnoreCase(command));
+        });
+        commandTerminal.start();
+        return new TerminalApplication(commandTerminal);
     }
 }
