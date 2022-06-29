@@ -1,7 +1,7 @@
-package indi.yunHerry.resolve;
+package indi.yunherry.resolve;
 
-import indi.yunHerry.exception.ParameterParsingException;
-import indi.yunHerry.log.InfoPrintExecute;
+import indi.yunherry.exception.ParameterParsingException;
+import indi.yunherry.log.InfoPrintExecute;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.regex.Matcher;
 /**
  * @author YunHerry
  */
-public class ArgsResolve extends Resolver {
+public class ArgsResolve extends AbstractResolver{
     public ArgsResolve() {
         super("(?<=-)[\u4e00-\u9fa5a-zA-Z0-9]+(=[\u4e00-\u9fa5a-zA-Z0-9]+)?");
     }

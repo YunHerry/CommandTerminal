@@ -1,14 +1,14 @@
-package indi.yunHerry.resolve;
+package indi.yunherry.resolve;
 
-import indi.yunHerry.exception.ParameterParsingException;
-import indi.yunHerry.log.InfoPrintExecute;
+import indi.yunherry.exception.ParameterParsingException;
+import indi.yunherry.log.InfoPrintExecute;
 
 import java.util.regex.Matcher;
 
 /**
  * @author YunHerry
  */
-public class MethodsResolve extends Resolver {
+public class MethodsResolve extends AbstractResolver {
     public MethodsResolve() {
            super("(?<=^\\/)[\\w\\u4e00-\\u9fa5]+");
     }

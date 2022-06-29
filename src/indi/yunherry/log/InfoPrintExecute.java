@@ -1,6 +1,6 @@
-package indi.yunHerry.log;
+package indi.yunherry.log;
 
-import indi.yunHerry.constant.StringColor;
+import indi.yunherry.constant.StringColor;
 
 import java.io.PrintStream;
 import java.text.SimpleDateFormat;

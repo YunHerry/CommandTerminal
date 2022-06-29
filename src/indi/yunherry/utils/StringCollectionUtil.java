@@ -1,4 +1,4 @@
-package indi.yunHerry.utils;
+package indi.yunherry.utils;
 
 import java.util.HashMap;
 import java.util.Map;
