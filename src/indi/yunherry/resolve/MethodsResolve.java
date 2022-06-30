@@ -2,7 +2,12 @@ package indi.yunherry.resolve;
 
 import indi.yunherry.exception.ParameterParsingException;
 import indi.yunherry.log.InfoPrintExecute;
+import indi.yunherry.model.dto.ResolveResult;
+import indi.yunherry.utils.RegexUtil;
+import indi.yunherry.utils.StringCollectionUtil;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 
 /**
@@ -16,13 +21,14 @@ public class MethodsResolve extends AbstractResolver {
         super(regex);
     }
     @Override
-    public String analyze(String input) {
-        Matcher matcher = this.getRegex().matcher(input);
-        if (!matcher.find()) {
-            InfoPrintExecute.ErrorPrint(new ParameterParsingException("No has the Method!"));
-            return "";
-        } else {
-            return matcher.group();
-        }
+    public ResolveResult analyze(String input) throws ParameterParsingException {
+        Matcher matcher = RegexUtil.isFind(input,getRegex());
+        return new ResolveResult(matcher.group());
+    }
+    @Override
+    public ResolveResult analyze(String input,ResolveResult resolveResult) throws ParameterParsingException {
+        Matcher matcher = RegexUtil.isFind(input,getRegex());
+        resolveResult.setMethodName(matcher.group());
+        return resolveResult;
     }
 }

@@ -17,7 +17,7 @@ public class ResolversIterator implements Iterator<AbstractResolver> {
     }
     @Override
     public boolean hasNext() {
-        if (this.resolvers.size() > index + 1) {
+        if (this.resolvers.size() > index) {
             return true;
         }
         return false;
@@ -25,6 +25,8 @@ public class ResolversIterator implements Iterator<AbstractResolver> {
 
     @Override
     public AbstractResolver next() {
-        return Objects.requireNonNull(resolvers.get(index));
+        AbstractResolver abstractResolver = Objects.requireNonNull(resolvers.get(index));
+        index++;
+        return abstractResolver;
     }
 }

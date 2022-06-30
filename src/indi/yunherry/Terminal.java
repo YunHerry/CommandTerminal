@@ -15,11 +15,11 @@ import java.util.Scanner;
 public class Terminal {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
        TerminalApplication terminalApplication= Terminal.run();
     }
 
-    public static TerminalApplication run() {
+    public static TerminalApplication run() throws Exception {
         return TerminalApplication.run();
     }
 }

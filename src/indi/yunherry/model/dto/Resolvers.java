@@ -15,7 +15,7 @@ public class Resolvers implements Aggregate {
     private List<AbstractResolver> resolvers;
 
     public Resolvers(AbstractResolver[] resolvers) {
-        List<AbstractResolver> resolverList = Arrays.asList(resolvers);
+        this.resolvers = Arrays.asList(resolvers);
     }
     protected AbstractResolver getResolver(int index) {
         return this.resolvers.get(index);
@@ -28,7 +28,7 @@ public class Resolvers implements Aggregate {
         return this.resolvers;
     }
     @Override
-    public Iterator<?> iterator() {
+    public Iterator<AbstractResolver> iterator() {
         return new ResolversIterator(this);
     }
 }

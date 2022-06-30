@@ -5,27 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc20d598-5cf0-4383-ad15-8990cbb58c91" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/annotation/Aggregate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/exception/TerminalNotExitException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/model/dto/ResolveResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/model/dto/Resolvers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/model/dto/TerminalApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/resolve/ResolversIterator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/smartfox_info.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/annotation/ComplexMatch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/exception/TerminalReflectException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/utils/RegexUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunHerry/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/Terminal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunHerry/command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/command/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunHerry/constant/StringColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/constant/StringColor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunHerry/exception/CommandExecutionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/exception/CommandExecutionException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunHerry/exception/ParameterParsingException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/exception/ParameterParsingException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunHerry/execution/Execute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/execution/Execute.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunHerry/log/InfoPrintExecute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/log/InfoPrintExecute.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunHerry/model/entity/TerminalApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunHerry/resolve/ArgsResolve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/resolve/ArgsResolve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunHerry/resolve/MethodsResolve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/resolve/MethodsResolve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunHerry/resolve/Resolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/resolve/AbstractResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunHerry/utils/StringCollectionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/utils/StringCollectionUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/Terminal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/constant/StringColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/constant/StringColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/log/InfoPrintExecute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/log/InfoPrintExecute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/model/dto/ResolveResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/model/dto/ResolveResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/model/dto/Resolvers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/model/dto/Resolvers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/model/dto/TerminalApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/model/dto/TerminalApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/resolve/AbstractResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/resolve/AbstractResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/resolve/ArgsResolve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/resolve/ArgsResolve.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/resolve/MethodsResolve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/resolve/MethodsResolve.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/resolve/ResolversIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/resolve/ResolversIterator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +73,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.indi.yunherry.Terminal" />
+        <item itemvalue="Application.Terminal" />
       </list>
     </recent_temporary>
   </component>
@@ -100,6 +94,8 @@
       <workItem from="1656314684425" duration="4079000" />
       <workItem from="1656405225639" duration="8604000" />
       <workItem from="1656487067277" duration="5725000" />
+      <workItem from="1656557780549" duration="12983000" />
+      <workItem from="1656572567954" duration="2368000" />
     </task>
     <servers />
   </component>
