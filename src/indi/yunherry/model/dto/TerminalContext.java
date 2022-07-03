@@ -4,13 +4,12 @@ import indi.yunherry.exception.ParameterParsingException;
 import indi.yunherry.exception.TerminalNotExitException;
 import indi.yunherry.exception.TerminalReflectException;
 import indi.yunherry.log.InfoPrintExecute;
-import indi.yunherry.resolve.AbstractResolver;
+import indi.yunherry.factory.bean.ResolverBean;
 import indi.yunherry.resolve.ArgsResolve;
 import indi.yunherry.resolve.MethodsResolve;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -18,44 +17,43 @@ import java.util.Scanner;
  * @author YunHerry
  * 基本参数对象,能够对动态的更改拦截器
  */
-public class TerminalApplication {
-    public static TerminalApplication terminalApplication;
+public class TerminalContext {
+    public static TerminalContext terminalApplication;
     protected static Scanner scanner = new Scanner(System.in);
     private Thread thread;
-    private Resolvers resolvers;
 
-    public TerminalApplication(Thread thread) {
+    public TerminalContext(Thread thread) {
         this.thread = thread;
     }
 
-    public TerminalApplication() {
+    public TerminalContext() {
     }
 
     /**
      * @param resolver 将你的解析器添加至解析器责任链中
      */
-    public TerminalApplication(Thread thread, AbstractResolver resolver) {
+    public TerminalContext(Thread thread, ResolverBean resolver) {
         this.thread = thread;
     }
 
-    public static TerminalApplication run() throws Exception {
-        if (TerminalApplication.terminalApplication == null) {
-            terminalApplication = new TerminalApplication();
+    public static TerminalContext run() throws Exception {
+        if (TerminalContext.terminalApplication == null) {
+            terminalApplication = new TerminalContext();
         } else {
             InfoPrintExecute.errorPrint(new TerminalNotExitException("Terminal Not Exit!"));
             return terminalApplication;
         }
-        terminalApplication.resolvers = new Resolvers(new AbstractResolver[]{new MethodsResolve(), new ArgsResolve()});
+        terminalApplication.resolvers = new Resolvers(new ResolverBean[]{new MethodsResolve(), new ArgsResolve()});
         terminalApplication.thread = new Thread(() -> {
             String command;
             do {
                 command = null;
                 System.out.print("> ");
                 command = scanner.nextLine();
-                Iterator<AbstractResolver> iterator = terminalApplication.resolvers.iterator();
+                Iterator<ResolverBean> iterator = terminalApplication.resolvers.iterator();
                 ResolveResult resolveResult = null;
                 while (iterator.hasNext()) {
-                    AbstractResolver abstractResolver = iterator.next();
+                    ResolverBean abstractResolver = iterator.next();
                     Class<?> resolveClass = abstractResolver.getResolveClass();
                     Method method = null;
                     try {

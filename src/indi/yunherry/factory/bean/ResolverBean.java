@@ -1,22 +1,18 @@
-package indi.yunherry.resolve;
+package indi.yunherry.factory.bean;
 
-import indi.yunherry.annotation.Aggregate;
-import indi.yunherry.annotation.ComplexMatch;
 import indi.yunherry.exception.ParameterParsingException;
 import indi.yunherry.model.dto.ResolveResult;
 
-import java.util.List;
 import java.util.regex.Pattern;
 
 /**
  * @author YunHerry
  * 解析器抽象类
  */
-public abstract class AbstractResolver {
+public abstract class ResolverBean extends Bean {
     private Pattern regex;
-    private Class<?> resolveClass;
-    public AbstractResolver(String regex) {
-        this.resolveClass = this.getClass();
+    public ResolverBean(String regex) {
+        this.beanClass = this.getClass();
         this.regex = Pattern.compile(regex);
     }
     public Pattern getRegex() {
@@ -28,7 +24,7 @@ public abstract class AbstractResolver {
     }
 
     public Class<?> getResolveClass() {
-        return resolveClass;
+        return this.beanClass;
     }
     /**
      * 解析Command数据

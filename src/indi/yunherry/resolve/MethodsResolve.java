@@ -1,19 +1,16 @@
 package indi.yunherry.resolve;
 
 import indi.yunherry.exception.ParameterParsingException;
-import indi.yunherry.log.InfoPrintExecute;
+import indi.yunherry.factory.bean.ResolverBean;
 import indi.yunherry.model.dto.ResolveResult;
 import indi.yunherry.utils.RegexUtil;
-import indi.yunherry.utils.StringCollectionUtil;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Matcher;
 
 /**
  * @author YunHerry
  */
-public class MethodsResolve extends AbstractResolver {
+public class MethodsResolve extends ResolverBean {
     public MethodsResolve() {
            super("(?<=^\\/)[\\w\\u4e00-\\u9fa5]+");
     }
