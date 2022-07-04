@@ -5,33 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc20d598-5cf0-4383-ad15-8990cbb58c91" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/TerminalApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/annotation/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/annotation/Execute.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/annotation/Factory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/annotation/Resolve.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/annotation/TerminalApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/beanfactory/CommandClassBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/bean/Bean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/bean/CommandBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/bean/ExecuteBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/CommandFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/ExecuteFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/Factory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/ResolveFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/utils/ClassUntil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/utils/FindClassUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/command/Command.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/bean/Engine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/bean/Execute.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommandTerminal.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CommandTerminal.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/Terminal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/command/Command.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/execution/Execute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/execution/Execute.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/model/dto/Resolvers.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/model/dto/TerminalApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/model/dto/TerminalContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/resolve/AbstractResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/bean/ResolverBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/TerminalApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/TerminalApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/beanfactory/CommandClassBean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/factory/bean/Bean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/factory/bean/CommandBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/bean/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/factory/bean/ExecuteBean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/factory/bean/ResolverBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/bean/Resolve.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/CommandFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/ExecuteFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/ExecuteFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/ResolveFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/ResolveFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/model/dto/TerminalContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/model/dto/TerminalContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/indi/yunherry/resolve/ArgsResolve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/resolve/ArgsResolve.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/indi/yunherry/resolve/MethodsResolve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/resolve/MethodsResolve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/resolve/ResolversIterator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/utils/ClassUntil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/utils/ClassUntil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +32,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="AnnotationType" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -55,7 +45,6 @@
     <setting file="file://$PROJECT_DIR$/src/indi/yunherry/annotation/ComplexMatch.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/indi/yunherry/annotation/Execute.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/indi/yunherry/execution/Execute.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/indi/yunherry/factory/bean/Bean.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/indi/yunherry/factory/factory/Factory.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/indi/yunherry/model/dto/TerminalContext.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/indi/yunherry/utils/FindClassUtil.java" root0="FORCE_HIGHLIGHTING" />
@@ -144,6 +133,7 @@
       <workItem from="1656743423314" duration="317000" />
       <workItem from="1656743759793" duration="5781000" />
       <workItem from="1656848975815" duration="4024000" />
+      <workItem from="1656941532133" duration="4499000" />
     </task>
     <servers />
   </component>

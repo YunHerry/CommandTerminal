@@ -1,15 +1,15 @@
 package indi.yunherry.model.dto;
 
+import indi.yunherry.command.Command;
 import indi.yunherry.exception.ParameterParsingException;
 import indi.yunherry.exception.TerminalNotExitException;
 import indi.yunherry.exception.TerminalReflectException;
+import indi.yunherry.factory.bean.Execute;
+import indi.yunherry.factory.bean.Resolve;
 import indi.yunherry.log.InfoPrintExecute;
-import indi.yunherry.factory.bean.ResolverBean;
-import indi.yunherry.resolve.ArgsResolve;
-import indi.yunherry.resolve.MethodsResolve;
-
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -18,10 +18,12 @@ import java.util.Scanner;
  * 基本参数对象,能够对动态的更改拦截器
  */
 public class TerminalContext {
-    public static TerminalContext terminalApplication;
+    public static TerminalContext terminalContext = new TerminalContext();
     protected static Scanner scanner = new Scanner(System.in);
     private Thread thread;
-
+    public final ArrayList<Resolve> resolvers = new ArrayList<>();
+    public final ArrayList<Execute> executes = new ArrayList<>();
+    public final ArrayList<Command> commands = new ArrayList<>();
     public TerminalContext(Thread thread) {
         this.thread = thread;
     }
@@ -32,28 +34,28 @@ public class TerminalContext {
     /**
      * @param resolver 将你的解析器添加至解析器责任链中
      */
-    public TerminalContext(Thread thread, ResolverBean resolver) {
+    public TerminalContext(Thread thread, Resolve resolver) {
         this.thread = thread;
     }
 
     public static TerminalContext run() throws Exception {
-        if (TerminalContext.terminalApplication == null) {
-            terminalApplication = new TerminalContext();
-        } else {
-            InfoPrintExecute.errorPrint(new TerminalNotExitException("Terminal Not Exit!"));
-            return terminalApplication;
-        }
-        terminalApplication.resolvers = new Resolvers(new ResolverBean[]{new MethodsResolve(), new ArgsResolve()});
-        terminalApplication.thread = new Thread(() -> {
+//        if (TerminalContext.terminalContext == null) {
+//            terminalContext = new TerminalContext();
+//        } else {
+//            InfoPrintExecute.errorPrint(new TerminalNotExitException("Terminal Not Exit!"));
+//            return terminalContext;
+//        }
+
+        terminalContext.thread = new Thread(() -> {
             String command;
             do {
                 command = null;
                 System.out.print("> ");
                 command = scanner.nextLine();
-                Iterator<ResolverBean> iterator = terminalApplication.resolvers.iterator();
+                Iterator<Resolve> iterator = terminalContext.resolvers.iterator();
                 ResolveResult resolveResult = null;
                 while (iterator.hasNext()) {
-                    ResolverBean abstractResolver = iterator.next();
+                    Resolve abstractResolver = iterator.next();
                     Class<?> resolveClass = abstractResolver.getResolveClass();
                     Method method = null;
                     try {
@@ -74,11 +76,11 @@ public class TerminalContext {
                 System.out.println(resolveResult.toString());
             } while (!"/exit".equalsIgnoreCase(command));
         });
-        terminalApplication.thread.setUncaughtExceptionHandler((Thread t, Throwable e) -> {
-            System.out.println(t.getName() + ": " + e);
-        });
-        InfoPrintExecute.TID = String.valueOf(terminalApplication.thread.getId());
-        terminalApplication.thread.start();
-        return terminalApplication;
+//        terminalApplication.thread.setUncaughtExceptionHandler((Thread t, Throwable e) -> {
+//            System.out.println(t.getName() + ": " + e);
+//        });
+        InfoPrintExecute.TID = String.valueOf(terminalContext.thread.getId());
+        terminalContext.thread.start();
+        return terminalContext;
     }
 }

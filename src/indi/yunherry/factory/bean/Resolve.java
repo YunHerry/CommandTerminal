@@ -9,10 +9,10 @@ import java.util.regex.Pattern;
  * @author YunHerry
  * 解析器抽象类
  */
-public abstract class ResolverBean extends Bean {
+public abstract class Resolve extends Engine {
     private Pattern regex;
-    public ResolverBean(String regex) {
-        this.beanClass = this.getClass();
+    public Resolve(String regex) {
+        this.engineClass = this.getClass();
         this.regex = Pattern.compile(regex);
     }
     public Pattern getRegex() {
@@ -24,7 +24,7 @@ public abstract class ResolverBean extends Bean {
     }
 
     public Class<?> getResolveClass() {
-        return this.beanClass;
+        return this.engineClass;
     }
     /**
      * 解析Command数据

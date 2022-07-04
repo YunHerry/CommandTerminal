@@ -6,9 +6,7 @@ import indi.yunherry.annotation.Command;
 import indi.yunherry.annotation.Execute;
 import indi.yunherry.annotation.Factory;
 import indi.yunherry.annotation.Resolve;
-import indi.yunherry.factory.bean.CommandBean;
-import indi.yunherry.factory.bean.ExecuteBean;
-import indi.yunherry.factory.bean.ResolverBean;
+import indi.yunherry.factory.bean.Engine;
 import indi.yunherry.model.dto.TerminalContext;
 import indi.yunherry.utils.ClassUntil;
 import indi.yunherry.utils.FindClassUtil;
@@ -29,25 +27,26 @@ public class TerminalApplication {
 
     public static TerminalContext run() throws Exception {
         List<Class> classList = FindClassUtil.findClasses(TerminalApplication.class);
-        List<ResolverBean> resolve = new ArrayList<>();
-        List<ExecuteBean> execute = new ArrayList<>();
         List<indi.yunherry.factory.factory.Factory> factory = new ArrayList<>();
-        List<CommandBean> command = new ArrayList<>();
         for (Class clazz : classList) {
-            if (clazz.isInterface()) {
-                break;
-            }
-            Object obj = clazz.getDeclaredConstructor().newInstance();
-            if(ClassUntil.isSuitableClass(Command.class,clazz, CommandBean.class)) {
-                command.add((CommandBean) obj);
+            Object obj;
+           try {
+               System.out.println(clazz.getName());
+               obj  = clazz.getDeclaredConstructor().newInstance();
+           } catch (InstantiationException | NoSuchMethodException exception) {
+               continue;
+           }
+            if(ClassUntil.isSuitableClass(Command.class,clazz, indi.yunherry.command.Command.class)) {
+                TerminalContext.terminalContext.commands.add((indi.yunherry.command.Command) obj);
             } else if (ClassUntil.isSuitableClass(Factory.class,clazz, indi.yunherry.factory.factory.Factory.class)) {
                 factory.add((indi.yunherry.factory.factory.Factory) obj);
-            } else if (ClassUntil.isSuitableClass(Resolve.class,clazz, ResolverBean.class)) {
-                resolve.add((ResolverBean) obj);
-            } else if (ClassUntil.isSuitableClass(Execute.class,clazz, ExecuteBean.class)) {
-                execute.add((ExecuteBean) obj);
+            } else if (ClassUntil.isSuitableClass(Resolve.class,clazz, indi.yunherry.factory.bean.Resolve.class)) {
+                TerminalContext.terminalContext.resolvers.add((indi.yunherry.factory.bean.Resolve) obj);
+            } else if (ClassUntil.isSuitableClass(Execute.class,clazz, indi.yunherry.factory.bean.Execute.class)) {
+                TerminalContext.terminalContext.executes.add((indi.yunherry.factory.bean.Execute) obj);
             }
         }
+        System.out.println(TerminalContext.terminalContext.resolvers);
         return TerminalContext.run();
     }
 }

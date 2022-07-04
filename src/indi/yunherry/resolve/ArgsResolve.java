@@ -2,7 +2,7 @@ package indi.yunherry.resolve;
 
 import indi.yunherry.annotation.ComplexMatch;
 import indi.yunherry.exception.ParameterParsingException;
-import indi.yunherry.factory.bean.ResolverBean;
+import indi.yunherry.factory.bean.Resolve;
 import indi.yunherry.model.dto.ResolveResult;
 import indi.yunherry.utils.RegexUtil;
 import indi.yunherry.utils.StringCollectionUtil;
@@ -15,7 +15,8 @@ import java.util.regex.Matcher;
 /**
  * @author YunHerry
  */
-public class ArgsResolve extends ResolverBean implements ComplexMatch<Map<String, String>> {
+@indi.yunherry.annotation.Resolve
+public class ArgsResolve extends Resolve implements ComplexMatch<Map<String, String>> {
     public ArgsResolve() {
         super("(?<=-)[\u4e00-\u9fa5a-zA-Z0-9]+(=[\u4e00-\u9fa5a-zA-Z0-9]+)?");
     }

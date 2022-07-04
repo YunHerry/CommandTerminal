@@ -10,8 +10,8 @@ import java.lang.annotation.Annotation;
 public class ClassUntil {
     public static <A extends Annotation> boolean isSuitableClass(Class<A> suitableAnnotation, Class clazz, Class fatherClass) {
         if (clazz == fatherClass) {
-            return true;
+            return false;
         }
-        return (fatherClass == null ? false : fatherClass.isAssignableFrom(clazz)) || clazz.getAnnotation(suitableAnnotation) != null;
+        return (fatherClass != null && fatherClass.isAssignableFrom(clazz)) || clazz.getAnnotation(suitableAnnotation) != null;
     }
 }

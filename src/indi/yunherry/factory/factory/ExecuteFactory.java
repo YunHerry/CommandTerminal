@@ -1,7 +1,6 @@
 package indi.yunherry.factory.factory;
 
-import indi.yunherry.factory.bean.Bean;
-import indi.yunherry.factory.bean.ExecuteBean;
+import indi.yunherry.factory.bean.Execute;
 
 /**
  * @author YunHerry
@@ -12,5 +11,5 @@ public abstract class ExecuteFactory extends Factory {
      *
      * @return ExecuteBean 返回创建的Bean
      * */
-     public abstract ExecuteBean createExecute();
+     public abstract Execute createExecute();
 }
