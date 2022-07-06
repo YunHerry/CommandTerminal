@@ -5,23 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc20d598-5cf0-4383-ad15-8990cbb58c91" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/command/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/bean/Engine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/bean/Execute.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/command/SystemCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/indi/yunherry/TerminalApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/TerminalApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/beanfactory/CommandClassBean.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/factory/bean/Bean.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/factory/bean/CommandBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/bean/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/factory/bean/ExecuteBean.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/factory/bean/ResolverBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/bean/Resolve.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/command/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/factory/bean/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/bean/Command.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/CommandFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/ExecuteFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/ExecuteFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/Factory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/ResolveFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/ResolveFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/indi/yunherry/model/dto/TerminalContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/model/dto/TerminalContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/resolve/ArgsResolve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/resolve/ArgsResolve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/resolve/MethodsResolve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/resolve/MethodsResolve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/utils/ClassUntil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/utils/ClassUntil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/utils/FindClassUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/utils/FindClassUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,10 +61,11 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/Projects/CommandTerminal/CommandTerminal.iml&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
   }
 }</component>
   <component name="RunManager" selected="Application.TerminalApplication">
@@ -133,7 +128,13 @@
       <workItem from="1656743423314" duration="317000" />
       <workItem from="1656743759793" duration="5781000" />
       <workItem from="1656848975815" duration="4024000" />
-      <workItem from="1656941532133" duration="4499000" />
+      <workItem from="1656941532133" duration="4852000" />
+      <workItem from="1657001672417" duration="8359000" />
+      <workItem from="1657024333757" duration="6649000" />
+      <workItem from="1657031726304" duration="597000" />
+      <workItem from="1657035655888" duration="115000" />
+      <workItem from="1657099578370" duration="2408000" />
+      <workItem from="1657102531972" duration="2619000" />
     </task>
     <servers />
   </component>
@@ -164,5 +165,9 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -18,12 +18,12 @@ public class FindClassUtil {
     /**
      * @param input 传入类对象,会扫描该包下所有带有该注解的类对象
      */
-    public static List<Class> findClasses(Class<?> input) throws IOException {
+    public static ArrayList<Class> findClasses(Class<?> input) throws IOException {
         return getClasses(input.getPackageName());
     }
 
-    private static List<Class> getClasses(String packageName) throws IOException {
-        List<Class> classes = new ArrayList<>();
+    private static ArrayList<Class> getClasses(String packageName) throws IOException {
+        ArrayList<Class> classes = new ArrayList<>();
         String packageDirName = packageName.replace('.', '/');
         Enumeration<URL> dirs;
         try {
