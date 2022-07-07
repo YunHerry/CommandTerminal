@@ -9,6 +9,7 @@ import indi.yunherry.log.InfoPrintExecute;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -23,7 +24,7 @@ public class TerminalContext {
     public final ArrayList<Resolve> resolvers = new ArrayList<>();
     public final ArrayList<Execute> executes = new ArrayList<>();
     public final ArrayList<Command> commands = new ArrayList<>();
-    private final ArrayList<Object> beans = new ArrayList<>();
+    private final HashMap<String,Object> beans = new HashMap<>();
     public TerminalContext(Thread thread) {
         this.thread = thread;
     }
@@ -82,5 +83,11 @@ public class TerminalContext {
         InfoPrintExecute.TID = String.valueOf(terminalContext.thread.getId());
         terminalContext.thread.start();
         return terminalContext;
+    }
+    public HashMap<String, Object> getBeans() {
+        return beans;
+    }
+    public void addBean(Class clazz) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+        beans.put(clazz.getName(),clazz.getDeclaredConstructor().newInstance());
     }
 }

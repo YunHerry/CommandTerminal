@@ -1,6 +1,7 @@
 package indi.yunherry.factory.factory;
 
 import indi.yunherry.annotation.Command;
+import indi.yunherry.annotation.DefaultValue;
 import indi.yunherry.factory.bean.Engine;
 import indi.yunherry.model.dto.TerminalContext;
 import indi.yunherry.utils.ClassUntil;
@@ -31,12 +32,21 @@ public class CommandFactory extends Factory {
             for (Method method: clazz.getDeclaredMethods()) {
                 String[] prams = new String[method.getParameters().length];
                 int i = 0;
+                indi.yunherry.factory.bean.Command command = new indi.yunherry.factory.bean.Command(method.getName());
                 for (Parameter pram: method.getParameters()) {
+                    DefaultValue defaultValue = pram.getDeclaredAnnotationsByType(DefaultValue.class)[0];
+                    if (defaultValue != null && defaultValue.defaultValue().isBlank()) {
+                        command.setDefaultArgs(pram.getName(),defaultValue.defaultValue());
+                    } else {
+                        command.setDefaultArgs(pram.getName(),"");
+                    }
                      prams[i] = pram.getName();
                      i++;
                 }
-                TerminalContext.terminalContext.commands.add(new indi.yunherry.factory.bean.Command(method.getName(),prams));
+                command.setArgsList(prams);
+                TerminalContext.terminalContext.commands.add(command);
             }
+            TerminalContext.terminalContext.addBean(clazz);
         }
     }
 
