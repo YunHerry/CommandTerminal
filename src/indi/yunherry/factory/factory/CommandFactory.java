@@ -11,6 +11,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 
 /**
@@ -28,20 +29,22 @@ public class CommandFactory extends Factory {
         ArrayList<Class> commands = new ArrayList<>();
         finds(beans, commands, Command.class, indi.yunherry.command.Command.class);
         for (Class clazz : commands) {
-            System.out.println(clazz.getName());
-            for (Method method: clazz.getDeclaredMethods()) {
+            for (Method method : clazz.getDeclaredMethods()) {
                 String[] prams = new String[method.getParameters().length];
                 int i = 0;
-                indi.yunherry.factory.bean.Command command = new indi.yunherry.factory.bean.Command(method.getName());
-                for (Parameter pram: method.getParameters()) {
-                    DefaultValue defaultValue = pram.getDeclaredAnnotationsByType(DefaultValue.class)[0];
-                    if (defaultValue != null && defaultValue.defaultValue().isBlank()) {
-                        command.setDefaultArgs(pram.getName(),defaultValue.defaultValue());
-                    } else {
-                        command.setDefaultArgs(pram.getName(),"");
+                indi.yunherry.factory.bean.Command command = new indi.yunherry.factory.bean.Command(method.getName(), method,clazz.getName());
+                for (Parameter pram : method.getParameters()) {
+                    DefaultValue[] defaultValues = pram.getDeclaredAnnotationsByType(DefaultValue.class);
+                    for (DefaultValue defaultValue : defaultValues) {
+                        if (defaultValue != null && defaultValue.defaultValue().isBlank()) {
+                            command.setDefaultArgs(pram.getName(), defaultValue.defaultValue());
+                        } else {
+                            command.setDefaultArgs(pram.getName(), "");
+                        }
+
                     }
-                     prams[i] = pram.getName();
-                     i++;
+                    prams[i] = pram.getName();
+                    i++;
                 }
                 command.setArgsList(prams);
                 TerminalContext.terminalContext.commands.add(command);

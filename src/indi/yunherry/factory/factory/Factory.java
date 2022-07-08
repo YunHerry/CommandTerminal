@@ -51,7 +51,7 @@ public abstract class Factory {
                 factory.create(classArrayList);
             }
         } catch (Exception e) {
-            System.out.println(e);
+            throw new RuntimeException(e);
         }
     }
 

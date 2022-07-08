@@ -8,6 +8,8 @@ import indi.yunherry.factory.bean.Resolve;
 import indi.yunherry.log.InfoPrintExecute;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -20,6 +22,7 @@ import java.util.Scanner;
 public class TerminalContext {
     public static TerminalContext terminalContext = new TerminalContext();
     protected static Scanner scanner = new Scanner(System.in);
+    public static String hostName;
     private Thread thread;
     public final ArrayList<Resolve> resolvers = new ArrayList<>();
     public final ArrayList<Execute> executes = new ArrayList<>();
@@ -40,18 +43,12 @@ public class TerminalContext {
     }
 
     public static TerminalContext run() throws Exception {
-//        if (TerminalContext.terminalContext == null) {
-//            terminalContext = new TerminalContext();
-//        } else {
-//            InfoPrintExecute.errorPrint(new TerminalNotExitException("Terminal Not Exit!"));
-//            return terminalContext;
-//        }
-
+        hostName = InetAddress.getLocalHost().getHostName();
         terminalContext.thread = new Thread(() -> {
             String command;
             do {
                 command = null;
-                System.out.print("> ");
+                System.out.print(hostName + " > ");
                 command = scanner.nextLine();
                 Iterator<Resolve> iterator = terminalContext.resolvers.iterator();
                 ResolveResult resolveResult = null;
@@ -74,7 +71,22 @@ public class TerminalContext {
                         InfoPrintExecute.errorPrint(new ParameterParsingException("Not Parameter Parsing"));
                     }
                 }
-                System.out.println(resolveResult.toString());
+                Iterator<Execute> executeIterator = terminalContext.executes.iterator();
+                while (executeIterator.hasNext()) {
+                    Execute execute = executeIterator.next();
+                    Class<?> executeClass = execute.getClass();
+                    Method method = null;
+                    try {
+                            method = executeClass.getMethod("executeCommand", ResolveResult.class);
+                            resolveResult = (ResolveResult) method.invoke(execute,resolveResult);
+                    } catch (NoSuchMethodException | IllegalAccessException e) {
+                        InfoPrintExecute.errorPrint(new TerminalReflectException("Methods Happen Exception!"));
+                        System.exit(-1);
+                    } catch (InvocationTargetException invocationTargetException) {
+                          throw new RuntimeException(invocationTargetException);
+//                        InfoPrintExecute.errorPrint(new ParameterParsingException("Not Parameter Parsing"));
+                    }
+                }
             } while (!"/exit".equalsIgnoreCase(command));
         });
 //        terminalApplication.thread.setUncaughtExceptionHandler((Thread t, Throwable e) -> {
