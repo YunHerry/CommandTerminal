@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author YunHerry
@@ -22,6 +24,7 @@ import java.util.Scanner;
 public class TerminalContext {
     public static TerminalContext terminalContext = new TerminalContext();
     protected static Scanner scanner = new Scanner(System.in);
+    protected static Pattern nullScanner = Pattern.compile("^[\\w\\u4e00-\\u9fa5]+");
     public static String hostName;
     private Thread thread;
     public final ArrayList<Resolve> resolvers = new ArrayList<>();
@@ -50,6 +53,11 @@ public class TerminalContext {
                 command = null;
                 System.out.print(hostName + " > ");
                 command = scanner.nextLine();
+                Matcher matcher = nullScanner.matcher(command);
+                if (matcher.find()) {
+                    System.out.println( matcher.group());
+                    continue;
+                }
                 Iterator<Resolve> iterator = terminalContext.resolvers.iterator();
                 ResolveResult resolveResult = null;
                 while (iterator.hasNext()) {
@@ -83,11 +91,10 @@ public class TerminalContext {
                         InfoPrintExecute.errorPrint(new TerminalReflectException("Methods Happen Exception!"));
                         System.exit(-1);
                     } catch (InvocationTargetException invocationTargetException) {
-                          throw new RuntimeException(invocationTargetException);
-//                        InfoPrintExecute.errorPrint(new ParameterParsingException("Not Parameter Parsing"));
+                        InfoPrintExecute.errorPrint(new ParameterParsingException("Not Parameter Parsing"));
                     }
                 }
-            } while (!"/exit".equalsIgnoreCase(command));
+            } while (true);
         });
 //        terminalApplication.thread.setUncaughtExceptionHandler((Thread t, Throwable e) -> {
 //            System.out.println(t.getName() + ": " + e);

@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc20d598-5cf0-4383-ad15-8990cbb58c91" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/model/dto/TerminalContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/model/dto/TerminalContext.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,6 +130,7 @@
       <workItem from="1657172974504" duration="3822000" />
       <workItem from="1657264066557" duration="7730000" />
       <workItem from="1657272217480" duration="72000" />
+      <workItem from="1657358788232" duration="1427000" />
     </task>
     <servers />
   </component>
