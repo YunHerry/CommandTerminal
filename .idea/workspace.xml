@@ -3,10 +3,30 @@
   <component name="AnalysisUIOptions">
     <option name="GROUP_BY_SEVERITY" value="true" />
   </component>
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="CommandTerminal:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="dc20d598-5cf0-4383-ad15-8990cbb58c91" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/CommandTerminal_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/model/run/TerminalThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.obsidian/app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.obsidian/appearance.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.obsidian/core-plugins.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.obsidian/hotkeys.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.obsidian/workspace" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/TerminalApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/TerminalApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/command/SystemCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/command/SystemCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/CommandFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/ExecuteFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/ExecuteFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/Factory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/ResolveFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/ResolveFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/indi/yunherry/model/dto/TerminalContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/model/dto/TerminalContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/utils/FindClassUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/utils/FindClassUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +37,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="AnnotationType" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -53,15 +73,28 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/Projects/CommandTerminal/CommandTerminal.iml&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.TerminalApplication">
+  <component name="RunManager" selected="Application.TerminalApplication$test">
     <configuration name="Terminal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="indi.yunherry.Terminal" />
+      <module name="CommandTerminal" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="indi.yunherry.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TerminalApplication$test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="indi.yunherry.TerminalApplication$test" />
       <module name="CommandTerminal" />
       <extension name="coverage">
         <pattern>
@@ -86,8 +119,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <module name="CommandTerminal" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TerminalApplication$test" />
+        <item itemvalue="Application.test" />
         <item itemvalue="Application.TerminalApplication" />
         <item itemvalue="Application.Terminal" />
       </list>
@@ -131,6 +173,15 @@
       <workItem from="1657264066557" duration="7730000" />
       <workItem from="1657272217480" duration="72000" />
       <workItem from="1657358788232" duration="1427000" />
+      <workItem from="1657361287573" duration="241000" />
+      <workItem from="1657434475519" duration="1810000" />
+      <workItem from="1657436461694" duration="221000" />
+      <workItem from="1657437057859" duration="29000" />
+      <workItem from="1657437695166" duration="1912000" />
+      <workItem from="1657440955008" duration="130000" />
+      <workItem from="1657441612431" duration="107000" />
+      <workItem from="1657441748145" duration="34000" />
+      <workItem from="1657441932167" duration="143000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CommandTerminal:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CommandTerminal_jar</output-path>
+    <root id="archive" name="CommandTerminal.jar">
+      <element id="module-output" name="CommandTerminal" />
+    </root>
+  </artifact>
+</component>

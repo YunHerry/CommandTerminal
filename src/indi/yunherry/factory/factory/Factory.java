@@ -18,20 +18,19 @@ import java.util.List;
  * @author h3209
  */
 public abstract class Factory {
-    protected static ArrayList<Class> classArrayList;
+    protected static ArrayList<Class<?>> classArrayList;
 
-    public static void initFactory() {
-        ArrayList<Class> classList = null;
+    public static void initFactory(Class<?> urlClazz) {
+        ArrayList<Class<?>> classList;
         try {
             classList = FindClassUtil.findClasses(TerminalApplication.class);
+            classList.addAll(FindClassUtil.findClasses(urlClazz));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        Iterator<Class> iterator = classList.iterator();
+        Iterator<Class<?>> iterator = classList.iterator();
         while (iterator.hasNext()) {
-
-            Class clazz = iterator.next();
-
+            Class<?> clazz = iterator.next();
             try {
                 if (clazz.isInterface() || clazz.isAnnotation()) {
                     iterator.remove();
@@ -61,10 +60,10 @@ public abstract class Factory {
      * @return Factory 返回具体实现的工厂对象
      */
     private static ArrayList<Factory> getFactory() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-        Iterator<Class> iterator = classArrayList.iterator();
+        Iterator<Class<?>> iterator = classArrayList.iterator();
         ArrayList<Factory> factoryArrayList = new ArrayList<>();
         while (iterator.hasNext()) {
-            Class clazz = iterator.next();
+            Class<?> clazz = iterator.next();
             if (ClassUntil.isSuitableClass(indi.yunherry.annotation.Factory.class, clazz, Factory.class)) {
                 factoryArrayList.add((Factory) clazz.getDeclaredConstructor().newInstance());
                 iterator.remove();
@@ -79,16 +78,10 @@ public abstract class Factory {
      *
      * @param classes 传入Class对象,来判断是否是对应工厂的菜
      */
-    protected abstract void create(ArrayList<Class> classes) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException, NoSuchFieldException;
+    protected abstract void create(ArrayList<Class<?>> classes) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException, NoSuchFieldException;
 
-    /**
-     * 该方法用于工厂寻找自己对应的菜,返回值返回自己的菜
-     *
-     * @return 返回是该工厂需要创建的对象的子类的集合
-     */
-//    protected abstract void finds(ArrayList<Class> classes,ArrayList<Class> trueList) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException;
-    public <A extends Annotation> void finds(ArrayList<Class> classes, ArrayList<Class> trueList, Class<A> annotation, Class fatherClass) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
-        Iterator<Class> iterator = classes.iterator();
+    public <A extends Annotation> void finds(ArrayList<Class<?>> classes, ArrayList<Class<?>> trueList, Class<A> annotation, Class<?> fatherClass) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+        Iterator<Class<?>> iterator = classes.iterator();
         while (iterator.hasNext()) {
             Class clazz = iterator.next();
             if (ClassUntil.isSuitableClass(annotation, clazz, fatherClass)) {

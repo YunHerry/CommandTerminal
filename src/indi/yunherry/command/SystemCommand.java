@@ -1,8 +1,6 @@
 package indi.yunherry.command;
 
 import indi.yunherry.annotation.Command;
-import indi.yunherry.annotation.DefaultValue;
-import indi.yunherry.model.dto.ResolveResult;
 
 /**
  * @author YunHerry
@@ -12,7 +10,10 @@ public class SystemCommand {
     public void exit() {
         System.exit(0);
     }
-    public void help() {
-
+    public void version() {
+        System.out.println("this the Informal version: v0.9.2");
+    }
+    public void authorInfo() {
+        System.out.println("author: Yun\nGithubID: YunHerry");
     }
 }

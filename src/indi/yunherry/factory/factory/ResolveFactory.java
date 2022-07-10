@@ -23,10 +23,10 @@ public class ResolveFactory extends Factory {
      * @return ResolverBean 返回解析器Bean对象
      */
     @Override
-    protected void create(ArrayList<Class> classes) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
-        ArrayList<Class> resolvers = new ArrayList<>();
+    protected void create(ArrayList<Class<?>> classes) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+        ArrayList<Class<?>> resolvers = new ArrayList<>();
         finds(classes,resolvers, indi.yunherry.annotation.Resolve.class,Resolve.class);
-        for (Class clazz: resolvers) {
+        for (Class<?> clazz: resolvers) {
             TerminalContext.terminalContext.resolvers.add((Resolve) clazz.getDeclaredConstructor().newInstance());
         }
     }

@@ -4,12 +4,15 @@ import java.io.File;
 import java.io.FileFilter;
 import java.io.IOException;
 import java.lang.annotation.Annotation;
+import java.net.JarURLConnection;
 import java.net.URL;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.jar.JarEntry;
+import java.util.jar.JarFile;
 
 /**
  * @author YunHerry
@@ -18,12 +21,12 @@ public class FindClassUtil {
     /**
      * @param input 传入类对象,会扫描该包下所有带有该注解的类对象
      */
-    public static ArrayList<Class> findClasses(Class<?> input) throws IOException {
+    public static ArrayList<Class<?>> findClasses(Class<?> input) throws IOException {
         return getClasses(input.getPackageName());
     }
 
-    private static ArrayList<Class> getClasses(String packageName) throws IOException {
-        ArrayList<Class> classes = new ArrayList<>();
+    public static ArrayList<Class<?>> getClasses(String packageName) throws IOException {
+        ArrayList<Class<?>> classes = new ArrayList<>();
         String packageDirName = packageName.replace('.', '/');
         Enumeration<URL> dirs;
         try {
@@ -37,6 +40,23 @@ public class FindClassUtil {
                     String filePath = URLDecoder.decode(url.getFile(), StandardCharsets.UTF_8);
                     findClassInPackageByFile(packageName, filePath, true, classes);
                 } else if ("jar".equals(protocol)) {
+                    JarURLConnection connection = (JarURLConnection) url.openConnection();
+                    if (connection != null) {
+                        JarFile jarFile = connection.getJarFile();
+                        if (jarFile != null) {
+                            //得到该jar文件下面的类实体
+                            Enumeration<JarEntry> jarEntryEnumeration = jarFile.entries();
+                            while (jarEntryEnumeration.hasMoreElements()) {
+                                JarEntry entry = jarEntryEnumeration.nextElement();
+                                String jarEntryName = entry.getName();
+                                if (jarEntryName.contains(".class") && jarEntryName.replaceAll("/", ".").startsWith(packageName)) {
+                                    String className = jarEntryName.substring(0, jarEntryName.lastIndexOf(".")).replace("/", ".");
+                                    Class<?> clazz = Class.forName(className);
+                                    classes.add(clazz);
+                                }
+                            }
+                        }
+                    }
                 }
             }
 
@@ -48,7 +68,7 @@ public class FindClassUtil {
         return classes;
     }
 
-    public static void findClassInPackageByFile(String packageName, String filePath, final boolean recursive, List<Class> classes) {
+    public static void findClassInPackageByFile(String packageName, String filePath, final boolean recursive, List<Class<?>> classes) {
         File dir = new File(filePath);
         if (!dir.exists() || !dir.isDirectory()) {
             return;
