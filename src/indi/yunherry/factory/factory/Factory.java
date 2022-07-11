@@ -1,21 +1,20 @@
 package indi.yunherry.factory.factory;
 
 import indi.yunherry.TerminalApplication;
-import indi.yunherry.annotation.Command;
-import indi.yunherry.factory.bean.Engine;
+import indi.yunherry.constant.enums.ScanTypeEnum;
+import indi.yunherry.exception.InitFactoryException;
 import indi.yunherry.model.dto.TerminalContext;
-import indi.yunherry.utils.ClassUntil;
 import indi.yunherry.utils.FindClassUtil;
+import indi.yunherry.utils.ScanClassUntil;
 
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 /**
- * @author h3209
+ * @author YunHerry
  */
 public abstract class Factory {
     protected static ArrayList<Class<?>> classArrayList;
@@ -23,6 +22,7 @@ public abstract class Factory {
     public static void initFactory(Class<?> urlClazz) {
         ArrayList<Class<?>> classList;
         try {
+            TerminalContext.mainClass = urlClazz;
             classList = FindClassUtil.findClasses(TerminalApplication.class);
             classList.addAll(FindClassUtil.findClasses(urlClazz));
         } catch (IOException e) {
@@ -50,7 +50,7 @@ public abstract class Factory {
                 factory.create(classArrayList);
             }
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new InitFactoryException(e);
         }
     }
 
@@ -59,17 +59,16 @@ public abstract class Factory {
      *
      * @return Factory 返回具体实现的工厂对象
      */
-    private static ArrayList<Factory> getFactory() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+    private static ArrayList<Factory> getFactory() throws InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
         Iterator<Class<?>> iterator = classArrayList.iterator();
         ArrayList<Factory> factoryArrayList = new ArrayList<>();
         while (iterator.hasNext()) {
             Class<?> clazz = iterator.next();
-            if (ClassUntil.isSuitableClass(indi.yunherry.annotation.Factory.class, clazz, Factory.class)) {
+            if (ScanClassUntil.isSuitableClass(indi.yunherry.annotation.Factory.class, clazz, Factory.class)) {
                 factoryArrayList.add((Factory) clazz.getDeclaredConstructor().newInstance());
                 iterator.remove();
             }
         }
-
         return factoryArrayList;
     }
 
@@ -80,11 +79,14 @@ public abstract class Factory {
      */
     protected abstract void create(ArrayList<Class<?>> classes) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException, NoSuchFieldException;
 
-    public <A extends Annotation> void finds(ArrayList<Class<?>> classes, ArrayList<Class<?>> trueList, Class<A> annotation, Class<?> fatherClass) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+    /**
+     * @param model 1 只扫描注解,2只扫描继承类 3全部扫描
+     */
+    public <A extends Annotation> void finds(ArrayList<Class<?>> classes, ArrayList<Class<?>> trueList, Class<A> annotation, Class<?> fatherClass, ScanTypeEnum model) {
         Iterator<Class<?>> iterator = classes.iterator();
         while (iterator.hasNext()) {
-            Class clazz = iterator.next();
-            if (ClassUntil.isSuitableClass(annotation, clazz, fatherClass)) {
+            Class<?> clazz = iterator.next();
+            if (model == ScanTypeEnum.SCAN_ONLY_ANNOTATION || model == ScanTypeEnum.SCAN_ONLY_FATHER_CLASS ? model == ScanTypeEnum.SCAN_ONLY_ANNOTATION ? ScanClassUntil.isSuitableAnnotation(annotation, clazz) : ScanClassUntil.isSuitableClass(clazz, fatherClass) : ScanClassUntil.isSuitableClass(annotation, clazz, fatherClass)) {
                 trueList.add(clazz);
                 iterator.remove();
             }

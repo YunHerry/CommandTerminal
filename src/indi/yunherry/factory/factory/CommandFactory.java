@@ -2,6 +2,8 @@ package indi.yunherry.factory.factory;
 
 import indi.yunherry.annotation.Command;
 import indi.yunherry.annotation.DefaultValue;
+import indi.yunherry.annotation.ScanCommand;
+import indi.yunherry.constant.enums.ScanTypeEnum;
 import indi.yunherry.model.dto.TerminalContext;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -19,9 +21,14 @@ public class CommandFactory extends Factory {
      * @return CommandBean 返回CommandBean对象
      */
     @Override
-    protected void create(ArrayList<Class<?>> beans) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchFieldException {
+    protected void create(ArrayList<Class<?>> beans) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         ArrayList<Class<?>> commands = new ArrayList<>();
-        finds(beans, commands, Command.class, indi.yunherry.command.Command.class);
+        ScanTypeEnum scanTypeEnum = ScanTypeEnum.SCAN_ALL;
+        ScanCommand annotation = TerminalContext.mainClass.getAnnotation(ScanCommand.class);
+        if (annotation != null) {
+            scanTypeEnum = annotation.model();
+        }
+        finds(beans, commands, Command.class, indi.yunherry.command.Command.class, scanTypeEnum);
         for (Class<?> clazz : commands) {
             for (Method method : clazz.getDeclaredMethods()) {
                 String[] prams = new String[method.getParameters().length];

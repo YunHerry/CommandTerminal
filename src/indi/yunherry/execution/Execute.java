@@ -16,7 +16,8 @@ import java.util.Map;
  */
 @indi.yunherry.annotation.Execute
 public class Execute extends indi.yunherry.factory.bean.Execute {
-    public void executeCommand(ResolveResult resolveResult) throws InvocationTargetException, IllegalAccessException {
+    //缺陷方法,暂时请勿使用重名方法
+    public void executeCommand(ResolveResult resolveResult) {
        try{
            Iterator<Command> commandIterator = TerminalContext.terminalContext.commands.iterator();
            String methodName = resolveResult.getMethodName();

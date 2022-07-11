@@ -1,4 +1,4 @@
-package indi.yunherry.constant;
+package indi.yunherry.constant.consist;
 
 /**
  * @author YunHerry

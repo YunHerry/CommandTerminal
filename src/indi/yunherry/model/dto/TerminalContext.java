@@ -20,7 +20,7 @@ import java.util.List;
  */
 public class TerminalContext {
     public static TerminalContext terminalContext = new TerminalContext();
-
+    public static Class<?> mainClass;
     public static String hostName;
     private Thread thread;
     public final ArrayList<Resolve> resolvers = new ArrayList<>();
