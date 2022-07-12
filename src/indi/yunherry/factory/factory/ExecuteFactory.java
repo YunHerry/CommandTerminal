@@ -2,7 +2,6 @@ package indi.yunherry.factory.factory;
 
 import indi.yunherry.constant.enums.ScanTypeEnum;
 import indi.yunherry.factory.bean.Execute;
-import indi.yunherry.factory.bean.Resolve;
 import indi.yunherry.model.dto.TerminalContext;
 
 import java.lang.reflect.InvocationTargetException;

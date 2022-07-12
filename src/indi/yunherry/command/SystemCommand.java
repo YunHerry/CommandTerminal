@@ -11,7 +11,7 @@ public class SystemCommand implements indi.yunherry.command.Command {
         System.exit(0);
     }
     public void version() {
-        System.out.println("this the Informal version: v0.9.3");
+        System.out.println("this the Informal version: v0.9.4");
     }
     public void authorInfo() {
         System.out.println("author: Yun\nGithubID: YunHerry");
