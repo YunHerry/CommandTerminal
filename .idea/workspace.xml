@@ -10,12 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc20d598-5cf0-4383-ad15-8990cbb58c91" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/exception/CommandConflictException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/indi/yunherry/exception/ExecuteException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/command/SystemCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/command/SystemCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/execution/Execute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/execution/Execute.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/ExecuteFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/ExecuteFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,6 +172,9 @@
       <workItem from="1657522977370" duration="4348000" />
       <workItem from="1657584490268" duration="338000" />
       <workItem from="1657584898295" duration="468000" />
+      <workItem from="1657585485384" duration="447000" />
+      <workItem from="1657620336869" duration="402000" />
+      <workItem from="1657705337626" duration="993000" />
     </task>
     <servers />
   </component>
