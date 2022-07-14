@@ -1,5 +1,7 @@
 # CommandTerminal
 
+TO [EN](https://github.com/YunHerry/CommandTerminal/blob/master/README_EN.md) [CN](https://github.com/YunHerry/CommandTerminal/blob/master/README.md)
+
 This project was inspired by the Minecraft server command line.
 
 You can call methods with commands like: "/help -arg=xxx".

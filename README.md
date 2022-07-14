@@ -1,4 +1,7 @@
 # CommandTerminal
+
+TO [EN](https://github.com/YunHerry/CommandTerminal/blob/master/README_EN.md) [CN](https://github.com/YunHerry/CommandTerminal/blob/master/README.md)
+
 该项目灵感来源于MinecraftServer的控制台命令行。
 
 你可以使用类似于: "/help -arg=xxx" 的命令来调用方法。
