@@ -2,6 +2,7 @@ package indi.yunherry.factory.factory;
 
 import indi.yunherry.annotation.Command;
 import indi.yunherry.annotation.DefaultValue;
+import indi.yunherry.annotation.MethodName;
 import indi.yunherry.annotation.ScanCommand;
 import indi.yunherry.constant.enums.ScanTypeEnum;
 import indi.yunherry.model.dto.TerminalContext;
@@ -33,11 +34,19 @@ public class CommandFactory extends Factory {
             for (Method method : clazz.getDeclaredMethods()) {
                 String[] prams = new String[method.getParameters().length];
                 int i = 0;
-                indi.yunherry.factory.bean.Command command = new indi.yunherry.factory.bean.Command(method.getName(), method,clazz.getName());
+                String methodName = null;
+                indi.yunherry.factory.bean.Command command;
+                MethodName[] methodAnnotationClass = method.getDeclaredAnnotationsByType(MethodName.class);
+                if (methodAnnotationClass.length != 0 && (methodName = methodAnnotationClass[0].methodName()) != null) {
+                    command = new indi.yunherry.factory.bean.Command(methodName, method,clazz.getName());
+                } else {
+                    command = new indi.yunherry.factory.bean.Command(method.getName(), method,clazz.getName());
+                }
                 for (Parameter pram : method.getParameters()) {
                     DefaultValue[] defaultValues = pram.getDeclaredAnnotationsByType(DefaultValue.class);
                     for (DefaultValue defaultValue : defaultValues) {
-                        if (defaultValue != null && defaultValue.defaultValue().isBlank()) {
+                        //Java8 没有isBlack() 请勿"    "写法 当然,你要写也行,我不反对(
+                        if (defaultValue != null && String.valueOf(defaultValue.defaultValue()).isBlank()) {
                             command.setDefaultArgs(pram.getName(), defaultValue.defaultValue());
                         } else {
                             command.setDefaultArgs(pram.getName(), "");
