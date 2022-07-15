@@ -14,7 +14,14 @@ TO [EN](https://github.com/YunHerry/CommandTerminal/blob/master/README_EN.md) [C
 
 ## 安装
 Maven
-请等待正式版发布。
+```
+<dependency>
+  <groupId>io.github.yunherry</groupId>
+  <artifactId>command-terminal</artifactId>
+  <version>1.0.0</version>
+  <type>pom</type>
+</dependency>
+```
 ## 如何开始?
 1、在你的主类上标注@TerminalApplication注解,并且在你的主函数中写上TerminalApplication.run(main.class);
 
