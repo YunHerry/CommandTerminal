@@ -24,6 +24,11 @@ Maven
 </dependency>
 ```
 
+Gradle
+```
+implementation 'io.github.yunherry:command-terminal:1.0.0'
+```
+
 ## How to Start?
 
 1.Annotate your main class with @TerminalApplication and write TerminalApplication.run(main.class); in your main function.
