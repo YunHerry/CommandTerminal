@@ -14,7 +14,15 @@ Efforts are currently underway to provide support for Springboot.
 
 
 ## Install
-About Maven. Please wait for the full version to be released.
+Maven
+```
+<dependency>
+  <groupId>io.github.yunherry</groupId>
+  <artifactId>command-terminal</artifactId>
+  <version>1.0.0</version>
+  <type>pom</type>
+</dependency>
+```
 
 ## How to Start?
 
