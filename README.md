@@ -22,10 +22,12 @@ Maven
   <type>pom</type>
 </dependency>
 ```
+
 Gradle
-···
+```
 implementation 'io.github.yunherry:command-terminal:1.0.0'
-···
+```
+
 ## 如何开始?
 1、在你的主类上标注@TerminalApplication注解,并且在你的主函数中写上TerminalApplication.run(main.class);
 
