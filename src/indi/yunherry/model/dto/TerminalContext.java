@@ -4,6 +4,7 @@ import indi.yunherry.exception.ParameterParsingException;
 import indi.yunherry.exception.TerminalReflectException;
 import indi.yunherry.factory.bean.Command;
 import indi.yunherry.factory.bean.Execute;
+import indi.yunherry.factory.bean.Filter;
 import indi.yunherry.factory.bean.Resolve;
 import indi.yunherry.log.InfoPrintExecute;
 import indi.yunherry.model.run.TerminalThread;
@@ -26,6 +27,8 @@ public class TerminalContext {
     public final ArrayList<Resolve> resolvers = new ArrayList<>();
     public final ArrayList<Execute> executes = new ArrayList<>();
     public final ArrayList<Command> commands = new ArrayList<>();
+    public final ArrayList<Filter> filters = new ArrayList<>();
+
     private final HashMap<String,Object> beans = new HashMap<>();
     public TerminalContext() {
     }

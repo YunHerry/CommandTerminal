@@ -3,6 +3,7 @@ package indi.yunherry.model.run;
 import indi.yunherry.exception.ParameterParsingException;
 import indi.yunherry.exception.TerminalReflectException;
 import indi.yunherry.factory.bean.Execute;
+import indi.yunherry.factory.bean.Filter;
 import indi.yunherry.factory.bean.Resolve;
 import indi.yunherry.log.InfoPrintExecute;
 import indi.yunherry.model.dto.ResolveResult;
@@ -53,6 +54,11 @@ public class TerminalThread implements Runnable {
                 } catch (InvocationTargetException invocationTargetException) {
                     InfoPrintExecute.errorPrint(new ParameterParsingException("Not Parameter Parsing"));
                 }
+            }
+            Iterator<Filter> filterIterator = TerminalContext.terminalContext.filters.iterator();
+            while (filterIterator.hasNext()) {
+                Filter filter = filterIterator.next();
+                resolveResult = filter.filter(resolveResult);
             }
             for (Execute execute : TerminalContext.terminalContext.executes) {
                 Class<?> executeClass = execute.getClass();
