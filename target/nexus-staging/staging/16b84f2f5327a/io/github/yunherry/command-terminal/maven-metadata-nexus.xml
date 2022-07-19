@@ -3,11 +3,10 @@
   <groupId>io.github.yunherry</groupId>
   <artifactId>command-terminal</artifactId>
   <versioning>
-    <release>1.0.2</release>
+    <release>1.0.3</release>
     <versions>
-      <version>1.0.0</version>
-      <version>1.0.2</version>
+      <version>1.0.3</version>
     </versions>
-    <lastUpdated>20220719064018</lastUpdated>
+    <lastUpdated>20220719071256</lastUpdated>
   </versioning>
 </metadata>
