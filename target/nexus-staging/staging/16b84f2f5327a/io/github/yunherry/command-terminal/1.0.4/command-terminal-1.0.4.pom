@@ -11,7 +11,7 @@
     <packaging>pom</packaging>
     <groupId>io.github.yunherry</groupId>
     <artifactId>command-terminal</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <name>command-terminal</name>
     <description>command-terminal</description>
     <url>https://github.com/YunHerry/CommandTerminal/</url>
@@ -70,8 +70,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.6.1</version>
                 <configuration>
-                    <source>9</source>
-                    <target>9</target>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
             </plugin>
         </plugins>

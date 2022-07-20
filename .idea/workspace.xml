@@ -14,18 +14,16 @@
   <component name="ChangeListManager">
     <list default="true" id="dc20d598-5cf0-4383-ad15-8990cbb58c91" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README_EN.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_EN.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/indi/yunherry/command/SystemCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/command/SystemCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/command-terminal-1.0.0.pom" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/command-terminal-1.0.0.pom.asc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/command-terminal-1.0.2.pom" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/command-terminal-1.0.2.pom.asc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/command-terminal-1.0.3.pom" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/command-terminal-1.0.3.pom.asc" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/nexus-staging/staging/16b84f2f5327a.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/nexus-staging/staging/16b84f2f5327a.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/nexus-staging/staging/16b84f2f5327a/.index" beforeDir="false" afterPath="$PROJECT_DIR$/target/nexus-staging/staging/16b84f2f5327a/.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/nexus-staging/staging/16b84f2f5327a/io/github/yunherry/command-terminal/1.0.0/command-terminal-1.0.0.pom" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/nexus-staging/staging/16b84f2f5327a/io/github/yunherry/command-terminal/1.0.0/command-terminal-1.0.0.pom.asc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/nexus-staging/staging/16b84f2f5327a/io/github/yunherry/command-terminal/1.0.2/command-terminal-1.0.2.pom" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/nexus-staging/staging/16b84f2f5327a/io/github/yunherry/command-terminal/1.0.2/command-terminal-1.0.2.pom.asc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/nexus-staging/staging/16b84f2f5327a/io/github/yunherry/command-terminal/1.0.3/command-terminal-1.0.3.pom" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/nexus-staging/staging/16b84f2f5327a/io/github/yunherry/command-terminal/1.0.3/command-terminal-1.0.3.pom.asc" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/nexus-staging/staging/16b84f2f5327a/io/github/yunherry/command-terminal/maven-metadata-nexus.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/nexus-staging/staging/16b84f2f5327a/io/github/yunherry/command-terminal/maven-metadata-nexus.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -246,6 +244,8 @@
       <workItem from="1657888631099" duration="214000" />
       <workItem from="1658154911556" duration="110000" />
       <workItem from="1658209594680" duration="3078000" />
+      <workItem from="1658295526011" duration="248000" />
+      <workItem from="1658304372864" duration="17000" />
     </task>
     <servers />
   </component>
