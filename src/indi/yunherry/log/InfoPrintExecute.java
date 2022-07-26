@@ -23,6 +23,9 @@ public class InfoPrintExecute {
     public static void warnPrint(String message) {
         out.println(sdf.format(new Date()) + StringColor.YELLOW + " WARN " +  StringColor.PURPLE + TID + StringColor.WHITE + " --- [ Terminal ] : " +  StringColor.YELLOW + message + StringColor.WHITE);
     }
+    public static <T extends Exception> void warnPrint(Class<T> exception) {
+        out.println(sdf.format(new Date()) + StringColor.YELLOW + " WARN " +  StringColor.PURPLE + TID + StringColor.WHITE + " --- [ Terminal ] : " +  StringColor.YELLOW + exception.getName() + StringColor.WHITE);
+    }
     public static void errorPrint(Exception exception) {
         out.println(sdf.format(new Date()) + StringColor.RED + " ERROR " +  StringColor.PURPLE + TID + StringColor.WHITE + " --- [ Terminal ] : "  +  StringColor.RED + exception.toString() + StringColor.WHITE);
     }
