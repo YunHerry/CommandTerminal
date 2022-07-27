@@ -34,6 +34,12 @@ implementation 'io.github.yunherry:command-terminal:1.0.0'
 2、使用@Command注解标注命令类(Class)即可,目前暂时不兼容Springboot,请勿使用Springboot来管理bean。
 
 3、请勿在多个命令类中,书写方法名称相同,并且参数数量相同的类,这会导致抛出CommandConflictException异常。
+
+## 起步文档
+```
+http://ibs.net.cn:46595/
+```
+
 ## 你觉得你遇到了一些BUG？
 本项目仍在开发测试阶段,或许的确有一些BUG,你可以提交Issues或直接PR,我将会给予您答复,当问题被复现,我会修复这个Bug。
 ## 如果你对某段代码有更好的想法
