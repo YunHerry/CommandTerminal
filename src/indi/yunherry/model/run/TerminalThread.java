@@ -27,7 +27,7 @@ public class TerminalThread implements Runnable {
         String command;
         Scanner scanner = new Scanner(System.in);
         do {
-            System.out.print(TerminalContext.hostName + " > ");
+            System.out.print(TerminalContext.hostName + "> ");
             command = scanner.nextLine();
             Matcher matcher = nullScanner.matcher(command);
             if (matcher.find()) {

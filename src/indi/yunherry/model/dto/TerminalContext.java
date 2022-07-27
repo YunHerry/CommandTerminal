@@ -7,11 +7,13 @@ import indi.yunherry.factory.bean.Execute;
 import indi.yunherry.factory.bean.Filter;
 import indi.yunherry.factory.bean.Resolve;
 import indi.yunherry.log.InfoPrintExecute;
+import indi.yunherry.model.entity.TerminalApplicationConfig;
 import indi.yunherry.model.run.TerminalThread;
 
 import java.lang.reflect.InvocationTargetException;
 import java.net.InetAddress;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -28,6 +30,7 @@ public class TerminalContext {
     public final ArrayList<Execute> executes = new ArrayList<>();
     public final ArrayList<Command> commands = new ArrayList<>();
     public final ArrayList<Filter> filters = new ArrayList<>();
+    public TerminalApplicationConfig terminalApplicationConfig;
 
     private final HashMap<String,Object> beans = new HashMap<>();
     public TerminalContext() {
@@ -45,6 +48,13 @@ public class TerminalContext {
 
     public static TerminalContext run() throws Exception {
         hostName = InetAddress.getLocalHost().getHostName();
+        if (terminalContext.terminalApplicationConfig.isUseHostName && terminalContext.terminalApplicationConfig.isUseHostIpName) {
+            hostName += ":" + InetAddress.getLocalHost().getHostAddress();
+        } else if (!(terminalContext.terminalApplicationConfig.isUseHostIpName | terminalContext.terminalApplicationConfig.isUseHostName)) {
+            hostName = "";
+        } else if (terminalContext.terminalApplicationConfig.isUseHostIpName){
+            hostName = InetAddress.getLocalHost().getHostAddress();
+        }
         terminalContext.thread = new Thread(new TerminalThread());
         InfoPrintExecute.TID = String.valueOf(terminalContext.thread.getId());
         terminalContext.thread.start();
