@@ -48,11 +48,11 @@ public class TerminalContext {
 
     public static TerminalContext run() throws Exception {
         hostName = InetAddress.getLocalHost().getHostName();
-        if (terminalContext.terminalApplicationConfig.isUseHostName && terminalContext.terminalApplicationConfig.isUseHostIpName) {
+        if (terminalContext.terminalApplicationConfig.terminal.scanf.isUseHostName && terminalContext.terminalApplicationConfig.terminal.scanf.isUseHostIpName) {
             hostName += ":" + InetAddress.getLocalHost().getHostAddress();
-        } else if (!(terminalContext.terminalApplicationConfig.isUseHostIpName | terminalContext.terminalApplicationConfig.isUseHostName)) {
+        } else if (!(terminalContext.terminalApplicationConfig.terminal.scanf.isUseHostIpName | terminalContext.terminalApplicationConfig.terminal.scanf.isUseHostName)) {
             hostName = "";
-        } else if (terminalContext.terminalApplicationConfig.isUseHostIpName){
+        } else if (terminalContext.terminalApplicationConfig.terminal.scanf.isUseHostIpName){
             hostName = InetAddress.getLocalHost().getHostAddress();
         }
         terminalContext.thread = new Thread(new TerminalThread());
