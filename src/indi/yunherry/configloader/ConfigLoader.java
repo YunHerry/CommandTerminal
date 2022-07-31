@@ -1,5 +1,6 @@
 package indi.yunherry.configloader;
 
+import indi.yunherry.exception.CommandConflictException;
 import indi.yunherry.exception.ConfigNotFoundException;
 import indi.yunherry.log.InfoPrintExecute;
 import indi.yunherry.model.dto.Customer;
@@ -34,7 +35,7 @@ public class ConfigLoader {
                 Customer customer = yaml.loadAs(inputStream, Customer.class);
                 TerminalContext.terminalContext.terminalApplicationConfig.terminal = customer.terminal;
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                throw new CommandConflictException(e.getMessage());
             } catch (ClassCastException classCastException) {
                 InfoPrintExecute.warnPrint("load Config happen error");
             } catch (NullPointerException nullPointerException) {
