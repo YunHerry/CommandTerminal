@@ -2,6 +2,8 @@ package indi.yunherry.factory.bean;
 
 import indi.yunherry.model.dto.ResolveResult;
 
+import java.lang.reflect.InvocationTargetException;
+
 /**
  * @author YunHerry
  */

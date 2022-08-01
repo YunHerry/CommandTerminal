@@ -12,7 +12,7 @@ public class Command extends Engine {
     private Method method;
     private String className;
     private String[] argsList;
-    private Map<String, String> defaultArgs = new HashMap<>();
+    private Map<String, Object> defaultArgs = new HashMap<>();
 
     public Command(String name, String[] argsList) {
         this.name = name;
@@ -33,7 +33,7 @@ public class Command extends Engine {
         this.argsList = argsList;
     }
 
-    public Map<String, String> getDefaultArgs() {
+    public Map<String, Object> getDefaultArgs() {
         return defaultArgs;
     }
 

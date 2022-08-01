@@ -3,15 +3,14 @@ package indi.yunherry.execution;
 import indi.yunherry.exception.CommandConflictException;
 import indi.yunherry.exception.ExecuteException;
 import indi.yunherry.factory.bean.Command;
+import indi.yunherry.factory.bean.Filter;
 import indi.yunherry.model.dto.ResolveResult;
 import indi.yunherry.model.dto.TerminalContext;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.Map;
+import java.lang.reflect.Parameter;
+import java.util.*;
 
 /**
  * @author YunHerry
@@ -34,11 +33,11 @@ public class Execute extends indi.yunherry.factory.bean.Execute {
                 }
             }
             assert trueCommand != null;
-            ArrayList<String> args = new ArrayList<>();
+            ArrayList<Object> args = new ArrayList<>();
             for (String key : trueCommand.getArgsList()) {
-                Map<String, String> defaultArgs = trueCommand.getDefaultArgs();
-                Map<String, String> resolveArgs = resolveResult.getMethodArgs();
-                if (resolveArgs.get(key).isBlank()) {
+                Map<String, Object> defaultArgs = trueCommand.getDefaultArgs();
+                Map<String, Object> resolveArgs = resolveResult.getMethodArgs();
+                if (resolveArgs.get(key) != null) {
                     args.add(resolveArgs.get(key));
                 } else {
                     args.add(defaultArgs.get(key));
