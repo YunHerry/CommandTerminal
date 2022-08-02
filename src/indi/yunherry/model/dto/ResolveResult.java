@@ -25,7 +25,9 @@ public class ResolveResult {
     public Map<String, Object> getMethodArgs() {
         return methodArgs;
     }
-
+    public void setMethodArgs(Map<String,Object> methodArgs) {
+        methodArgs.putAll(methodArgs);
+    }
     public String getMethodName() {
         return methodName;
     }

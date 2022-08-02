@@ -4,10 +4,7 @@ import indi.yunherry.factory.bean.Filter;
 import indi.yunherry.model.dto.ResolveResult;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -20,16 +17,21 @@ public class AutoFilter extends Filter {
 
     @Override
     public ResolveResult filter(ResolveResult resolveResult) {
+        Map<String,Object> map = new HashMap<>();
         for (Map.Entry<String, Object> entry : resolveResult.getMethodArgs().entrySet()) {
-            ArrayList<Class<?>> decideClass = new ArrayList<>(List.of(new Class<?>[]{Boolean.class, Float.class, Double.class, Integer.class, Short.class, Long.class, String.class}));
+            ArrayList<Class<?>> decideClass = new ArrayList<>(List.of(new Class<?>[]{Boolean.class}));
+            if (!("true".equals(entry.getValue()) || "false".equals(entry.getValue()))) {
+                decideClass.remove(Boolean.class);
+            }
             resolveResult.setTypeArgs(entry.getKey(), typeTransitions(entry.getValue(), decideClass));
             addIncompatibleClass(decideClass, "[0-9]*\\..[0-9]*D$", Double.class, (String) entry.getValue());
             addIncompatibleClass(decideClass, "[0-9]*\\..[0-9]*F$", Float.class, (String) entry.getValue());
             addIncompatibleClass(decideClass, "[0-9]+L$", Long.class, (String) entry.getValue());
             addIncompatibleClass(decideClass, "[0-9]+I$", Integer.class, (String) entry.getValue());
             addIncompatibleClass(decideClass, "[0-9]+S$", Short.class, (String) entry.getValue());
-            resolveResult.getMethodArgs().put(entry.getKey(), value);
+            map.put(entry.getKey(), value);
         }
+        resolveResult.setMethodArgs(map);
         return resolveResult;
     }
 
@@ -50,6 +52,7 @@ public class AutoFilter extends Filter {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(input);
         if (matcher.find()) {
+            System.out.println("加入数组");
             decideClass.add(clazz);
             AutoFilter.value = matcher.group().substring(0, matcher.group().length() - 1);
         }

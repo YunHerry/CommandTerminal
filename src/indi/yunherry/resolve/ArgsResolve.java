@@ -47,7 +47,7 @@ public class ArgsResolve extends Resolve implements ComplexMatch<Map<String, Str
             }
             while (matcher.find());
         } catch (ParameterParsingException ignored) {
-
+            System.out.println(ignored);
         }
         return StringCollectionUtil.ToMap(str.toString());
     }
