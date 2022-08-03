@@ -56,6 +56,9 @@ public class Execute extends indi.yunherry.factory.bean.Execute {
 //                System.out.println(command.getArgsList());
 //            }
 //            assert trueCommand.size() > 1;
+            if(trueCommand.size() > 2) {
+                throw new ExecuteException("Method size > 2!");
+            }
             for (Command command : trueCommand) {
                 ArrayList<Object> args = new ArrayList<>();
                 for (String key : command.getArgsList()) {
