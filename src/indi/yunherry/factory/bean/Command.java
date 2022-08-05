@@ -14,12 +14,22 @@ public class Command extends Engine {
     private String[] argsList;
     private Map<String, Object> defaultArgs = new HashMap<>();
 
+    private Map<String, Class<?>> typeArgs = new HashMap<>();
+
+    public Class<?> getTypeArg(String key) {
+        return typeArgs.get(key);
+    }
+
+    public void addTypeArg(String key,Class<?> clazz) {
+        typeArgs.put(key,clazz);
+    }
+
     public Command(String name, String[] argsList) {
         this.name = name;
         this.argsList = argsList;
     }
 
-    public Command(String name, Method method,String className) {
+    public Command(String name, Method method, String className) {
         this.name = name;
         this.method = method;
         this.className = className;

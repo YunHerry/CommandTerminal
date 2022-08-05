@@ -12,8 +12,6 @@ import java.util.Map;
 public class ResolveResult {
     private String methodName;
     private final Map<String, Object> methodArgs = new HashMap<>();
-    private final Map<String, List<Class<?>>> typeArgs = new HashMap<>();
-
     public ResolveResult(String methodName) {
         this.methodName = methodName;
     }
@@ -41,13 +39,5 @@ public class ResolveResult {
         return "Method: " + this.methodName + " args: " + methodArgs;
     }
 
-    public Map<String, List<Class<?>>> getTypeArgs() {
-        return typeArgs;
-    }
-
-    public boolean setTypeArgs(String key, List<Class<?>> typeArgs) {
-        this.typeArgs.put(key, typeArgs);
-        return true;
-    }
 }
 

@@ -43,6 +43,7 @@ public class CommandFactory extends Factory {
                     command = new indi.yunherry.factory.bean.Command(method.getName(), method,clazz.getName());
                 }
                 for (Parameter pram : method.getParameters()) {
+                    command.addTypeArg(pram.getName(),pram.getType());
                     DefaultValue[] defaultValues = pram.getDeclaredAnnotationsByType(DefaultValue.class);
                     for (DefaultValue defaultValue : defaultValues) {
                         //Java8 没有isBlack() 请勿"    "写法 当然,你要写也行,我不反对(

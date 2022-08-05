@@ -17,21 +17,21 @@ public class AutoFilter extends Filter {
 
     @Override
     public ResolveResult filter(ResolveResult resolveResult) {
-        Map<String,Object> map = new HashMap<>();
-        for (Map.Entry<String, Object> entry : resolveResult.getMethodArgs().entrySet()) {
-            ArrayList<Class<?>> decideClass = new ArrayList<>(List.of(new Class<?>[]{Boolean.class}));
-            if (!("true".equals(entry.getValue()) || "false".equals(entry.getValue()))) {
-                decideClass.remove(Boolean.class);
-            }
-            resolveResult.setTypeArgs(entry.getKey(), typeTransitions(entry.getValue(), decideClass));
-            addIncompatibleClass(decideClass, "[0-9]*\\..[0-9]*D$", Double.class, (String) entry.getValue());
-            addIncompatibleClass(decideClass, "[0-9]*\\..[0-9]*F$", Float.class, (String) entry.getValue());
-            addIncompatibleClass(decideClass, "[0-9]+L$", Long.class, (String) entry.getValue());
-            addIncompatibleClass(decideClass, "[0-9]+I$", Integer.class, (String) entry.getValue());
-            addIncompatibleClass(decideClass, "[0-9]+S$", Short.class, (String) entry.getValue());
-            map.put(entry.getKey(), value);
-        }
-        resolveResult.setMethodArgs(map);
+//        Map<String,Object> map = new HashMap<>();
+//        for (Map.Entry<String, Object> entry : resolveResult.getMethodArgs().entrySet()) {
+//            ArrayList<Class<?>> decideClass = new ArrayList<>(List.of(new Class<?>[]{Boolean.class}));
+//            if (!("true".equals(entry.getValue()) || "false".equals(entry.getValue()))) {
+//                decideClass.remove(Boolean.class);
+//            }
+//            resolveResult.setTypeArgs(entry.getKey(), typeTransitions(entry.getValue(), decideClass));
+//            addIncompatibleClass(decideClass, "[0-9]*\\..[0-9]*D$", Double.class, (String) entry.getValue());
+//            addIncompatibleClass(decideClass, "[0-9]*\\..[0-9]*F$", Float.class, (String) entry.getValue());
+//            addIncompatibleClass(decideClass, "[0-9]+L$", Long.class, (String) entry.getValue());
+//            addIncompatibleClass(decideClass, "[0-9]+I$", Integer.class, (String) entry.getValue());
+//            addIncompatibleClass(decideClass, "[0-9]+S$", Short.class, (String) entry.getValue());
+//            map.put(entry.getKey(), value);
+//        }
+//        resolveResult.setMethodArgs(map);
         return resolveResult;
     }
 
