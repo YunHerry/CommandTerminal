@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
  * @author YunHerry
  * 自动类型转换
  */
-public class AutoFilter extends Filter {
+public class AutoFilter implements Filter {
     private static String value;
 
     @Override

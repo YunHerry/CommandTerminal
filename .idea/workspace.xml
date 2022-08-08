@@ -15,15 +15,12 @@
     <list default="true" id="dc20d598-5cf0-4383-ad15-8990cbb58c91" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/indi/yunherry/execution/Execute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/execution/Execute.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/factory/bean/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/bean/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/factory/CommandFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/factory/bean/Filter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/factory/bean/Filter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/indi/yunherry/filter/AutoFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/filter/AutoFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/indi/yunherry/model/dto/ResolveResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/indi/yunherry/model/dto/ResolveResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/indi/yunherry/exception/ExecuteException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/indi/yunherry/exception/ExecuteException.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/indi/yunherry/execution/Execute.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/indi/yunherry/execution/Execute.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/indi/yunherry/factory/bean/Command.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/indi/yunherry/factory/bean/Command.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/indi/yunherry/factory/factory/CommandFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/indi/yunherry/factory/factory/CommandFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/indi/yunherry/factory/bean/Filter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/indi/yunherry/factory/bean/Filter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/indi/yunherry/filter/AutoFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/indi/yunherry/filter/AutoFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/indi/yunherry/model/run/TerminalThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/indi/yunherry/model/run/TerminalThread.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,9 +63,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Enum" />
         <option value="AnnotationType" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -365,6 +362,9 @@
       <workItem from="1659709311665" duration="776000" />
       <workItem from="1659710209050" duration="39000" />
       <workItem from="1659710379722" duration="112000" />
+      <workItem from="1659710545647" duration="446000" />
+      <workItem from="1659960061728" duration="606000" />
+      <workItem from="1659960745917" duration="450000" />
     </task>
     <servers />
   </component>

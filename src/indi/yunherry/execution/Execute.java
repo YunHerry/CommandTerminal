@@ -34,10 +34,13 @@ public class Execute extends indi.yunherry.factory.bean.Execute {
                             }
                         }
                     }
-                    System.out.println(Arrays.toString(command.getArgsList()));
                     if (size == command.getArgsList().length) {
-                        trueCommand = command;
-                        break;
+                        if (trueCommand == null) {
+                            trueCommand = command;
+                            break;
+                        } else {
+                            throw new CommandExecutionException("true command size >= 2!");
+                        }
                     }
                 }
             }
