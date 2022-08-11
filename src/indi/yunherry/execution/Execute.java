@@ -45,7 +45,8 @@ public class Execute extends indi.yunherry.factory.bean.Execute {
                 }
             }
                 ArrayList<Object> args = new ArrayList<>();
-                for (String key : trueCommand.getArgsList()) {
+            assert trueCommand != null;
+            for (String key : trueCommand.getArgsList()) {
                     Map<String, Object> defaultArgs = trueCommand.getDefaultArgs();
                     Map<String, Object> resolveArgs = resolveResult.getMethodArgs();
                     if (resolveArgs.get(key) != null) {
