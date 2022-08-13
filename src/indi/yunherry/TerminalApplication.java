@@ -8,6 +8,7 @@ import indi.yunherry.model.dto.TerminalContext;
 /**
  * @author YunHerry
  * 启动类&测试类
+ * LaunchClass&TestClass
  */
 public class TerminalApplication {
     public static TerminalContext run(Class<?> clazz) throws Exception {
