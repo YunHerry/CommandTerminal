@@ -2,7 +2,7 @@ package indi.yunherry.constant.enums;
 
 /**
  * @author YunHerry
- *
+ * 扫描枚举,用于配置扫描模式
  */
 
 public enum ScanTypeEnum {

@@ -18,6 +18,7 @@ import java.util.*;
  */
 @indi.yunherry.annotation.Execute
 public class Execute extends indi.yunherry.factory.bean.Execute {
+    public static String Exception_MESSAGE = "true command size >= 2!";
     public void executeCommand(ResolveResult resolveResult) throws IllegalAccessException {
         try {
             Iterator<Command> commandIterator = TerminalContext.terminalContext.commands.iterator();
@@ -39,7 +40,7 @@ public class Execute extends indi.yunherry.factory.bean.Execute {
                             trueCommand = command;
                             break;
                         } else {
-                            throw new CommandExecutionException("true command size >= 2!");
+                            throw new CommandExecutionException(Exception_MESSAGE);
                         }
                     }
                 }
